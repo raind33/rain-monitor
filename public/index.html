@@ -8,27 +8,16 @@
 </head>
 <body>
   <div id="container">
-    <div class="content">
-      <input type="button" value="点击抛出错误" onclick="errorClick()">
-      <input type="button" value="点击抛出Promise错误" onclick="promiseErrorClick()">
-      <input type="button" value="点击" onclick="test()">
-    </div>
+    <div style="background: red;height: 200px;width: 100px;">43434</div>
   </div>
   <script>
-    function errorClick () {
-      window.some.error = 'error'
-    }
-    function promiseErrorClick() {
-      new Promise((resolve,reject) => {
-        window.some.error = 'error'
-      })
-    }
-    function test() {
-      const img = new Image()
-      img.src = 'adae.js'
-      document.body.appendChild(img)
-    }
+    setTimeout(() => {
+      let container = document.querySelector('#container')
+      let h = document.createElement('h1')
+      h.innerHTML = '有意义元素'
+      h.setAttribute('elementtiming', 'meaningful')
+      container.appendChild(h)
+    }, 2000);
   </script>
-  <script src="/aewewewe.js"></script>
 </body>
 </html>

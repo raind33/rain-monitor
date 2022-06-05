@@ -8,7 +8,15 @@ module.exports = {
     filename: 'monitor.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'dist'),
+    before(router){
+      router.get('/success', (req,res) => {
+        res.json('hahah')
+      })
+      router.post('/error', (req,res) => {
+        res.sendStatus(500)
+      })
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
